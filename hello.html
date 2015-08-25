@@ -1,0 +1,37 @@
+<head>
+  <title>Methods</title>
+</head>
+
+<body>
+  <h1>12. Methods!</h1>
+  {{> hello}}
+  {{>addPlayerForm}}
+  {{>loginButtons}}
+</body>
+
+<template name="hello">
+    <!--Hello Meteor-->
+    {{#each player}}
+        <ul>
+            <li  class="player {{selectedClass}}">{{name}}:{{score}}</li>
+        </ul>
+        <hr/>
+    {{/each}}
+    <input class="increment" type="button" value="Give 5 Points">
+    <input class="decrement" type="button" value="Take 5 Points">
+    <!--<hr color="red"/> <hr color="red"/>-->
+    <li>Selected Player: {{showSelectedPlayer.name}}</li>
+   <!-- <hr color="red"/> <hr color="red"/>-->
+    <input class="remove" type="button" value="Remove Player">
+</template>
+
+<template name="addPlayerForm">
+   <!-- Form -->
+    {{#if currentUser}}
+    <form>
+      <!--  <hr color="red"/>-->
+        <input type="text" name="playerName" >
+        <input type="submit" value="Add Player">
+    </form>
+    {{/if}}
+</template>
